@@ -19,8 +19,11 @@ cd Binary-Diffing-and-Marimo
 uv pip install marimo
 
 ## Install the Binary Ninja API
-python3 ~/binaryninja/scripts/install_api.py
+- python3 ~/binaryninja/scripts/install_api.py
+- python3 /Applications/Binary\ Ninja.app/Contents/Resources/scripts/install_api.py
+- Windows (user install): %LOCALAPPDATA%\Vector35\BinaryNinja
 
+## Launch the notebook
 marimo edit ./Binary Ninja Headless.py
 
 The notebook will ask you to install the required dependencies via uv.
