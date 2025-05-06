@@ -24,6 +24,6 @@ uv pip install marimo
 - Windows (user install): %LOCALAPPDATA%\Vector35\BinaryNinja
 
 ## Launch the notebook
-marimo edit ./Binary Ninja Headless.py
+marimo edit ./binary_ninja_headless.py
 
 The notebook will ask you to install the required dependencies via uv.
