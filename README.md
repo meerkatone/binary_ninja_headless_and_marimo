@@ -18,7 +18,7 @@ cd Binary-Diffing-and-Marimo
 
 uv pip install marimo
 
-##Install the Binary Ninja API
+## Install the Binary Ninja API
 python3 ~/binaryninja/scripts/install_api.py
 
 marimo edit ./Binary Ninja Headless.py
