@@ -14,7 +14,7 @@ uv venv venv_marimo --python 3.12
 
 source /venv_marimo/headless/bin/activate
 
-cd Binary-Diffing-and-Marimo
+cd Binary-Ninja-Headless-and-Marimo
 
 uv pip install marimo
 
