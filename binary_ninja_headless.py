@@ -655,5 +655,27 @@ def _(ent_chart):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+    <h2>Reference Material</h2>
+    - Marimo User Guide: https://docs.marimo.io/guides/
+    - Marimo Examples: https://docs.marimo.io/examples/
+    - Binary Ninja Python API Reference: https://api.binary.ninja/
+    - Binary Ninja Intermediate Language Overview: https://docs.binary.ninja/dev/bnil-overview.html
+    - Batch Processing and Other Automation Tips: https://docs.binary.ninja/dev/batch.html
+    - User Informed Data Flow: https://docs.binary.ninja/dev/uidf.html
+    - SSA Explained: https://carstein.github.io/2020/10/22/ssa-explained.html#fnref:1
+    - Hunting Format String Vulnerabilities: https://youtu.be/Mylbm3MIiTU
+    - Auditing system calls for command injection vulnerabilities using Binary Ninja's HLIL: https://youtu.be/F3uh8DuS0tE
+    - cetfor/SystemCallAuditorBinja.py: https://gist.github.com/cetfor/67cbd707bf44252aebbaf6308db28ee5
+    - Learning Binary Ninja for Reverse Engineering - Scripting Basics and More Part 1: https://youtu.be/RVyZBqjLrE0
+    - Learning Binary Ninja for Reverse Engineering - Scripting Basics and More Part 2: https://youtu.be/gLggUUy0-iI
+    """
+    )
+    return
+
+
 if __name__ == "__main__":
     app.run()
