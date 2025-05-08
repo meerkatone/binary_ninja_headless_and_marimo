@@ -15,7 +15,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Marimo notebook setup</h2>""")
+    mo.md(r"""<h2>Marimo Notebook Setup</h2>""")
     return
 
 
@@ -23,6 +23,7 @@ def _(mo):
 def _():
     import os
     import math
+    import polars as pl
     import pandas as pd
     import marimo as mo
     import sys
@@ -49,7 +50,7 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Binary Ninja version</h2>""")
+    mo.md(r"""<h2>Binary Ninja Version</h2>""")
     return
 
 
@@ -61,7 +62,7 @@ def _(binaryninja):
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Load the Binary Ninja database</h2>""")
+    mo.md(r"""<h2>Load the Binary Ninja Database</h2>""")
     return
 
 
@@ -119,9 +120,9 @@ def _(mlil_ssa):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(r"""<h2>Check if the 3rd param to memcpy takes negative range values</h2>""")
+    mo.md(r"""<h2>Check if the 3rd param to memcpy takes Negative Range Values</h2>""")
     return
 
 
@@ -382,7 +383,7 @@ def _(ThreadPoolExecutor, binaryninja, os, pd, sys, tqdm):
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Load the parquet results</h2>""")
+    mo.md(r"""<h2>Load the Parquet Results</h2>""")
     return
 
 
@@ -400,7 +401,7 @@ def _(df):
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Set the dataframe types</h2>""")
+    mo.md(r"""<h2>Set the Dataframe Types</h2>""")
     return
 
 
@@ -414,9 +415,15 @@ def _(df):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(r"""<h2>DuckDB SQL with dataframes</h2>""")
+    mo.md(r"""<h2>DuckDB SQL with Dataframes</h2>""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Entropy > 6</h2>""")
     return
 
 
@@ -434,12 +441,24 @@ def _(duckdb):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Strings LIKE '%0x8154%'</h2>""")
+    return
+
+
+@app.cell
 def _(duckdb):
     duckdb.query("""
         SELECT *
         FROM df
         WHERE Strings LIKE '%0x8154%'
     """).to_df()
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Functions LIKE '%0xec50%'</h2>""")
     return
 
 
@@ -454,12 +473,24 @@ def _(duckdb):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Xrefs_to_System LIKE '%0x4fb88%'</h2>""")
+    return
+
+
+@app.cell
 def _(duckdb):
     duckdb.query("""
         SELECT *
         FROM df
         WHERE Xrefs_to_System LIKE '%0x4fb88%'
     """).to_df()
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Average Cyclomatic Complexity < 3.6</h2>""")
     return
 
 
@@ -475,7 +506,7 @@ def _(duckdb):
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Charting with Altair</h2>""")
+    mo.md(r"""<h2>Charting with Altair Entropy of Binaries (Bar Chart)</h2>""")
     return
 
 
@@ -500,6 +531,12 @@ def _(alt, df):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""<h2>Average Cyclomatic Complexity of Binaries (Bar Chart)</h2>""")
+    return
+
+
+@app.cell
 def _(alt, df):
     chart1 = alt.Chart(df).mark_bar().encode(
         x=alt.X("Binary:N", sort=None, title="Binary"),
@@ -519,12 +556,24 @@ def _(alt, df):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Average_Cyclomatic_Complexity < 3.6</h2>""")
+    return
+
+
+@app.cell
 def _(duckdb):
     duckdb.query("""
         SELECT *
         FROM df
         WHERE Average_Cyclomatic_Complexity < 3.6
     """).to_df()
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""<h2>Add Potential_Dangerous_Calls_To_System Column</h2>""")
     return
 
 
@@ -540,6 +589,12 @@ def _(df):
 @app.cell
 def _(df):
     df
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""<h2>Potential_Dangerous_Calls_To_System (Bar Chart)</h2""")
     return
 
 
@@ -569,6 +624,12 @@ def _(alt, df_sorted):
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""<h2>Query Average_Cyclomatic_Complexity > 6</h2>""")
+    return
+
+
+@app.cell
 def _(duckdb, mo):
     query = """
     SELECT *
@@ -585,12 +646,6 @@ def _(duckdb, mo):
 
 
 @app.cell
-def _(df):
-    df.head()
-    return
-
-
-@app.cell
 def _(mo):
     mo.md(r"""<h2>Interactive charting with Marimo UI slider</h2>""")
     return
@@ -601,6 +656,12 @@ def _(mo):
     entropy_slider = mo.ui.slider(start=0.0, stop=10.0, step=0.1, value=6.0, label="Minimum Entropy")
     entropy_slider
     return (entropy_slider,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""<h2>Binaries with Entropy Above Threshold (Bar Chart)</h2>""")
+    return
 
 
 @app.cell
@@ -632,12 +693,13 @@ def _(df, pd):
     ent_chart = pd.DataFrame(df[ent_chart])
     ent_chart = ent_chart.sort_values(by=["Entropy"], ascending=False)
     ent_chart = ent_chart.reset_index(drop=True)
+    ent_chart
     return (ent_chart,)
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h2>Highlight results with style</h2>""")
+    mo.md(r"""<h2>Highlight Results with Style</h2>""")
     return
 
 
