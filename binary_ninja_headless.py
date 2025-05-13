@@ -35,12 +35,10 @@ def _():
     from collections import Counter
     import matplotlib.pyplot as plt
     from ast import literal_eval
-    import jupyter_black
     import binaryninja
     import altair as alt
     import subprocess
     import duckdb
-    jupyter_black.load()
 
     os.environ["BN_DISABLE_USER_SETTINGS"] = "True"
     os.environ["BN_DISABLE_USER_PLUGINS"] = "True"
