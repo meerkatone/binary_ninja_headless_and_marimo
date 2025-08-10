@@ -1,4 +1,4 @@
-# Binary-Ninja-Headless-and-Marimo
+# Binary Ninja Headless and Marimo
 Using Binary Ninja Headless with Marimo
 
 git clone https://github.com/meerkatone/binary_ninja_headless_and_marimo.git
