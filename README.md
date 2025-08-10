@@ -1,7 +1,7 @@
 # Binary-Ninja-Headless-and-Marimo
 Using Binary Ninja Headless with Marimo
 
-git clone https://github.com/meerkatone/Binary-Ninja-Headless-and-Marimo.git
+git clone https://github.com/meerkatone/binary_ninja_headless_and_marimo.git
 
 ## Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
